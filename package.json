@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npx run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/dom-navigation": "^1.0.4",
