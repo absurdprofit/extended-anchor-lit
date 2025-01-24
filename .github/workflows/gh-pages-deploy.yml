@@ -37,4 +37,4 @@ jobs:
           npm ci
 
       - name: Deploy
-        run: npx run deploy
+        run: npm run deploy
