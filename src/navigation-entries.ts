@@ -1,8 +1,8 @@
-import { LitElement, html, nothing } from 'lit';
+import { LitElement, html } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
 @customElement('navigation-entries')
-class NavigationEntries extends LitElement {
+export class NavigationEntries extends LitElement {
   @property({ type: String, state: true }) entries: NavigationHistoryEntry[] = [];
 
   connectedCallback() {

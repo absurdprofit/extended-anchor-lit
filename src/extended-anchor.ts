@@ -2,7 +2,7 @@ import { LitElement, html, nothing } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
 @customElement('extended-anchor')
-class ExtendedAnchor extends LitElement {
+export class ExtendedAnchor extends LitElement {
   @property({ type: String }) href: string | undefined;
   @property({ type: String }) rel: string | undefined;
   @property({ type: String }) key: string | undefined;
