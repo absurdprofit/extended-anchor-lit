@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/extended-anchor.ts"></script>
+    <script type="module" src="/src/navigation-entries.ts"></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Anchor Element Extension</h1>
+      <ul>
+        <li>
+          <extended-anchor href="/hello">Push</extended-anchor>
+        </li>
+        <li>
+          <extended-anchor reload>Reload</extended-anchor>
+        </li>
+        <li>
+          <extended-anchor href="/hello-world" replace>Replace</extended-anchor>
+        </li>
+        <li>
+          <extended-anchor rel="prev" traverse>Traverse back</extended-anchor>
+        </li>
+      </ul>
+
+      <nav class="tabs">
+        <extended-anchor class="tab" href="tab-1" traverse>Tab 1</extended-anchor>
+        <extended-anchor class="tab" href="tab-2" traverse>Tab 2</extended-anchor>
+        <extended-anchor class="tab" href="tab-3" traverse>Tab 3</extended-anchor>
+      </nav>
+    </div>
+
+    <section>
+      <h1>NavigationHistoryEntry List</h1>
+      <navigation-entries></navigation-entries>
+    </section>
+
+    <script>
+      navigation.addEventListener('navigate', (e) => {
+        e.intercept({ handler: () => console.log(e) });
+      });
+    </script>
+  </body>
+</html>
